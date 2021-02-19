@@ -1,0 +1,10 @@
+{
+    "mongo": {
+        "url": ""
+    },
+    "rabbitMQ": {
+        "host": "",
+        "port": 5672
+    }
+    
+}

@@ -1,0 +1,50 @@
+
+.layout {
+    height: 100vh;
+}
+
+.contentLayout {
+    padding: 0 50px;
+    margin-top: 64;
+    height: 100%;
+    margin: 16px 24px 16px 0;
+}
+
+.card {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: 240px;
+}
+
+.task_controller {
+    float: left;
+    margin: 10px 40px;
+}
+
+.header {
+    background-color: #2BAE66;
+}
+
+.link {
+    font-family: 'Black Han Sans', sans-serif;
+    color: #FCF6F5;
+    font-weight: 200;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 10px;
+}
+
+.button_add {
+    float: left;
+    margin: 10px 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.notification_card {
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: lighter;
+    cursor: pointer;
+}

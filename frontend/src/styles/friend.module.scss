@@ -1,0 +1,85 @@
+
+.contentLayout {
+    padding: 0 50px;
+    margin-top: 64;
+    height: 100%;
+    margin: 16px 24px 16px 0;
+}
+
+.content {
+    background-color: #FCF6F5;
+    color: #2BAE66;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.container {
+    height: 100%;
+    width: 50%;
+    float: left;  
+}
+
+.list {
+    height: 85%;
+    margin: 5px 40px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #2BAE66;
+    overflow: auto;
+}
+
+.number {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.card {
+    margin: 8px 16px;
+    background-color: #FCF6F5;
+    color: #2BAE66;
+}
+
+.photo {
+    float: left;
+    font-size: 64px;
+    padding-right: 10px;
+    border-style: none solid none none;
+}
+
+.profile {
+    float: left;
+    margin-left: 30px;
+}
+
+.remove {
+    float: right;
+    background-color: #2BAE66;
+    color: #FCF6F5;
+    margin: 15px 0;
+}
+
+.search {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.search_button {
+    margin-left: 12px;
+    background-color: #2BAE66;
+    color: #FCF6F5;
+}
+
+.help {
+    margin-top: 12px;
+}
+
+.show_list {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 8px 24px;
+    text-align: left;
+    overflow: auto;
+}
+

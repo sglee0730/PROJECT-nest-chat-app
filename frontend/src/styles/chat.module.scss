@@ -1,0 +1,61 @@
+.contentLayout {
+    padding: 0 50px;
+    margin-top: 64;
+    height: 100%;
+    margin: 16px 24px 16px 0;
+}
+
+.header {
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: lightgray;
+    padding: 0px 15px;
+    background-color: #2BAE66;
+
+    Button {
+        background-color: lightgray;
+        margin: 0 5px;
+        color: #2BAE66;
+    }
+}
+
+.content {
+    background-color: #2BAE66;
+    padding: 15px;
+    height: 570px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: lighter;
+    overflow: auto;
+}
+
+.footer {
+    padding: 10px;
+    background-color: #2BAE66;
+}
+
+.input {
+    width: 100%;
+    float: right;
+    background-color: #FCF6F5;
+    color: #2BAE66;
+}
+
+.button {
+    margin: 0 5px;
+}
+
+.speech {
+    background-color: #FCF6F5;
+    color: #2BAE66;
+    margin: 10px 20px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+              0 2px 2px rgba(0,0,0,0.20), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.10),
+              0 16px 16px rgba(0,0,0,0.05);
+}

@@ -1,0 +1,12 @@
+{
+    "rabbitMQ": {
+        "host": "",
+        "port": 5672
+    },
+    "neo4j": {
+        "host": "",
+        "port": 7687,
+        "username": "",
+        "password": ""  
+    }
+}
