@@ -28,7 +28,7 @@ client와 직접 통신하는 http 서버입니다. 메세지큐인 RabbitMQ를 
 <li>Account-service</li>
 
 
-계정과 인증에 대한 기본적인 서비스입니다. JWT와 Bcrypt를 이용한 보안방식을 사용하였습니다. 주 저장소는 mySQL이며, redis에는 토큰 정보가 저장되어 인증시에 사용됩니다.
+계정과 인증에 대한 기본적인 서비스입니다. JWT와 Bcrypt를 이용한 보안방식을 사용하였습니다. 주 저장소는 mySQL이며, redis에는 토큰 정보가 저장되어 인증시에 사용됩니다. 세션 저장소를 이용해 로그인을 유지하며 클라이언트에 auth_token 이름의 토큰이 있을 시 /account/auth로 요청하여 로그인을 생략합니다.
 <li>Friend-service</li>
 
 
