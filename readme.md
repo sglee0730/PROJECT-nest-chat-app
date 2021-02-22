@@ -49,5 +49,5 @@ React, Ant design, sass로 전체적인 UI와 화면을 구성하였고, 상태 
  - [ ] 개인 도커 레지스트리 구축
  - [ ] 네이버 클라우드 플랫폼의 무료 쿠폰 이용하여서 쿠버네티스 클러스터 구성
  - [ ] Elasticsearch, FluentD, Kibana를 이용한 로깅과 시각화
- - [ ]프로메태우스, Grafana 혹은 Datadog을 사용하여 쿠버네티스와 다른 서비스 모니터링
+ - [ ] 프로메태우스, Grafana 혹은 Datadog을 사용하여 쿠버네티스와 다른 서비스 모니터링
  - [ ] Jmeter, Naver Pinpoint 사용하여 스트레스 테스트
