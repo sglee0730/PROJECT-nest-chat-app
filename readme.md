@@ -9,6 +9,10 @@ NestJS와 마이크로 서비스 아키텍쳐에 대해 학습하고자 시작�
 ![chat-app](https://user-images.githubusercontent.com/58541337/108497817-614b3100-72ef-11eb-9b27-1d1b88bbcfef.png)
 
 <ul>
+<li>Notification-service
+
+dynamo db와 연동한 알림 서비스입니다. 친구 추가 시 친구 서비스에서 알림을 생성하며 친구 신청을 받은 이용자에게 알림이 생성됩니다.
+
 <li>Scraping-service</li>
 
 
