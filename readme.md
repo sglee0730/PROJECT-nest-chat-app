@@ -50,4 +50,4 @@ React, Ant design, sass로 전체적인 UI와 화면을 구성하였고, 상태 
  - [x] 네이버 클라우드 플랫폼의 무료 쿠폰 이용하여서 쿠버네티스 클러스터 구성
  - [ ] Application을 쿠버네티스 deployment로 배포
  - [ ] Front는 호스팅 서비스 이용하여 데모 생성
- - [ ] FluentD, Datadog을 사용하여 로깅 및 서비스 모니터링
+ - [ ] Elastic Stack, FluentD를 이용한 로깅
