@@ -183,6 +183,61 @@ POST /friend/recommendation
 }
 ```
 
+## Task service
+
+<li> task 스캔
+
+```
+GET /task/scan
+{
+    "email": "apple@example.com"
+}
+---------result----------
+[
+    {
+        "_id": "603764a88b5fa357c444469c",
+        "username": "apple",
+        "email": "apple@example.com",
+        "description": "쿠버네티스 공부하기!!",
+        "date": "2021-02-25T08:49:44.503Z",
+        "__v": 0
+    },
+    {
+        "_id": "603764cd8b5fa357c444469d",
+        "username": "apple",
+        "email": "apple@example.com",
+        "description": "Golang으로 유튜브 스팸 코멘트 제거하기 만들기",
+        "date": "2021-02-25T08:50:21.328Z",
+        "__v": 0
+    },
+    {
+        "_id": "603764de8b5fa357c444469e",
+        "username": "apple",
+        "email": "apple@example.com",
+        "description": "AWS solutions architect 따기",
+        "date": "2021-02-25T08:50:38.226Z",
+        "__v": 0
+    },
+    {
+        "_id": "603765498b5fa357c444469f",
+        "username": "apple",
+        "email": "apple@example.com",
+        "description": "C++로 leetcode 정복!!",
+        "date": "2021-02-25T08:52:25.334Z",
+        "__v": 0
+    }
+]
+
+```
+
+<li> task 수정
+
+![task_add](https://user-images.githubusercontent.com/58541337/109138951-4a4c8900-779e-11eb-810a-1b5cae22bf67.gif)
+
+<li> task 추가 삭제
+
+![task_edit](https://user-images.githubusercontent.com/58541337/109138928-3f91f400-779e-11eb-8dd8-40bdef726475.gif)
+
 ## deploy
 
 클라우드 상의 쿠버네티스를 이용하여 배포
