@@ -11,7 +11,7 @@ export class AccountController {
     ) {}
 
     @Post('signup')
-    async signUp(account: AccountDto) {
+    async signUp(@Body() account: AccountDto) {
         await this.friendClient.send('signup', account).toPromise();
         return await this.accountClient.send('signup', account).toPromise();
     }

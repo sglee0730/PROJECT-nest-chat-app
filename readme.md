@@ -25,6 +25,9 @@ Socket.io를 사용한 간단한 채팅 앱입니다. Redis를 어댑터 패턴�
 
 
 client와 직접 통신하는 http 서버입니다. 메세지큐인 RabbitMQ를 사용하여 다른 서비스간에 비동기 작업이 용이하게 합니다. Kafka 사용 예정이였으나 추후 kubernetes 실험 운영을 고려해 stateful한 기술인 Kafka대신 rabbitMQ로 대체하였습니다. 
+
+![rabbit](https://user-images.githubusercontent.com/58541337/109134053-fbe8bb80-7798-11eb-845d-811f37bd298f.JPG)
+
 <li>Account-service</li>
 
 
@@ -37,11 +40,148 @@ Neo4j 그래프 데이터 베이스를 이용하여 친구 검색, 추가, 삭�
 
 
 MongoDB Atlas를 이용한 간단한 task 관리 서비스입니다. task 추가, 삭제, 변경, 조회 기능있습니다.
+
+![mongo](https://user-images.githubusercontent.com/58541337/109133520-6f3dfd80-7798-11eb-8cde-7306158d7021.JPG)
+
 <li>Front-end</li>
 
 
 React, Ant design, sass로 전체적인 UI와 화면을 구성하였고, 상태 관리에는 recoil을 사용하였습니다.
 </ul>
+
+## Account service
+
+<li>가입
+
+```
+POST /account/signup
+
+{
+    "email": "nest@example.com",
+    "password" : "1q2w3e4r",
+    "username": "nest"
+}
+---------result----------
+{
+    "success": true,
+    "message": "User registered successful. ",
+    "date": "2021-2-25"
+}
+```
+
+<li>로그인
+
+![login](https://user-images.githubusercontent.com/58541337/109131088-cf7f7000-7795-11eb-9afb-008ad4fdde1c.gif)
+<li>토큰 생성
+
+![token](https://user-images.githubusercontent.com/58541337/109131281-fc338780-7795-11eb-9f33-c86a109608c6.JPG)
+
+## Chat service
+
+<li>채팅
+
+![chat](https://user-images.githubusercontent.com/58541337/109131343-0f465780-7796-11eb-8ce8-7915f7cbd6ab.gif)
+
+## Scraper service
+
+<li>open graph 이미지가 존재하면 바로 이미지 반환
+
+```
+POST /scraper
+
+{
+    "url": "https://naver.com"
+}
+---------result----------
+{
+    "ogTitle": "네이버",
+    "ogUrl": "https://www.naver.com/",
+    "ogDescription": "네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요",
+    "twitterCard": "summary",
+    "twitterUrl": "https://www.naver.com/",
+    "twitterDescription": "네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요",
+    "ogImage": {
+        "url": "https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png",
+        "width": null,
+        "height": null,
+        "type": "png"
+    }
+}
+```
+
+존재하지 않으면 puppeteer에 Headless browser 사용하여 캡쳐후 base64 값 반환
+
+ex)  https://google.com 은 ogImage가 존재하지 않아 chromium 동작 예시
+
+```
+---------result----------
+{
+    "ogTitle": "Google",
+    "ogLocale": "ko",
+    "charset": "iso-8859-1",
+    "requestUrl": "https://google.com",
+    "success": true,
+    "preview": "iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAYAAACadoJwAAAAAXNSR0IArs4c6QAAIABJREFUeJzs3XecFPX9x......."
+}
+```
+
+![scraper](https://user-images.githubusercontent.com/58541337/109131546-3f8df600-7796-11eb-89f6-a310d0f2cd3e.gif)
+
+
+## Friend service
+
+<li> neo4j
+
+<li>친구 불러오기
+
+![loadfriend](https://user-images.githubusercontent.com/58541337/109132228-f25e5400-7796-11eb-9aad-fd69bfb8de32.gif)
+
+<li>유저 찾기
+
+```
+POST /friend/search
+
+{
+    "username": "apple"
+}
+---------result----------
+{
+    "success": true,
+    "result": [
+        {
+            "email": "apple@example.com",
+            "username": "apple"
+        }
+    ]
+}
+```
+
+<li>친구 추천
+
+![fl](https://user-images.githubusercontent.com/58541337/109133422-56cde300-7798-11eb-9c2c-0231fb2e0007.JPG)
+
+ex) 나와 관계를 가진 노드들 중 2 이상 관계를 가진 노드 fox, yarn을 반환
+
+```
+POST /friend/recommendation
+{
+    "email": "apple@example.com"
+}
+---------result----------
+{
+    "success": true,
+    "result": [
+        {
+            "email": "yarn@example.com",
+            "username": "yarn"
+        },
+        {
+            "email": "fox@example.com",
+            "username": "fox"
+        }
+    ]
+}
+```
 
 ## deploy
 

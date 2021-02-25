@@ -1,4 +1,4 @@
-import { Controller, Inject, Post } from '@nestjs/common';
+import { Body, Controller, Inject, Post } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { FriendDto } from './friend.dto';
 
@@ -10,35 +10,28 @@ export class FriendController {
     ) {}
 
     @Post()
-    async scan(friend: FriendDto) {
+    async scan(@Body() friend: FriendDto) {
         return await this.client.send('friends', friend).toPromise();
     }
     
     @Post('recommendation')
-    async recommend(friend: FriendDto) {
+    async recommend(@Body() friend: FriendDto) {
         return await this.client.send('recommendation', friend).toPromise();
     } 
 
     @Post('search')
-    async search(friend: FriendDto) {
+    async search(@Body() friend: FriendDto) {
         return await this.client.send('search', friend).toPromise();
     }
 
     @Post('connect')
-    async connect(friend: FriendDto) {
-        const { email, target } = friend;
+    async connect(@Body() friend: FriendDto) {
         const result = await this.client.send('connect', friend).toPromise();
-        await this.notificationClient.send('produce', { 
-            email: email, 
-            producer: 'friendService', 
-            message: `${email} is friend of ${target}` })
-        .toPromise();
-
         return result;
     }
 
     @Post('disconnect')
-    async disconnect(friend: FriendDto) {
+    async disconnect(@Body() friend: FriendDto) {
         return await this.client.send('disconnect', friend).toPromise();
     }
 }

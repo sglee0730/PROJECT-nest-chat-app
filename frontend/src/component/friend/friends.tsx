@@ -15,7 +15,7 @@ export const Friends: FC = () => {
     const user = useRecoilValue(GlobalUserState);
 
     useEffect(() => {
-        axios.post('//localhost:5000/getfriends', {
+        axios.post('//localhost:5000/friend', {
             username: user.username,
             email: user.email,
         })

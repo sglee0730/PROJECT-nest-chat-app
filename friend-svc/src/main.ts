@@ -22,7 +22,7 @@ async function bootstrap() {
   app.startAllMicroservices(() => {
     logger.log('Starting microservice!');
   })
-  .listen(5000, () => {
+  .listen(5002, () => {
     logger.log('Friend Service is listening');
   })
 }

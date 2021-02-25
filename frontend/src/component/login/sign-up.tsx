@@ -9,7 +9,7 @@ export const SignUpPage: React.FC = () => {
     const [form] = Form.useForm();
 
     const onFinish = (values: { email: string, password: string, username: string }) => {
-        axios.post('//localhost:5000/signup', {
+        axios.post('//localhost:5000/account/signup', {
             username: values.username,
             email: values.email,
             password: values.password,
