@@ -243,6 +243,4 @@ GET /task/scan
 클라우드 상의 쿠버네티스를 이용하여 배포
  - [x] 개인 도커 레지스트리 구축
  - [x] 네이버 클라우드 플랫폼의 무료 쿠폰 이용하여서 쿠버네티스 클러스터 구성
- - [ ] Application을 쿠버네티스 deployment로 배포
- - [ ] Front는 호스팅 서비스 이용하여 데모 생성
  - [ ] Elastic Stack, FluentD를 이용한 로깅
